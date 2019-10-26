@@ -1,0 +1,12 @@
+CREATE TABLE [dbo].[Games] (
+    [game_id]          INT             NOT NULL,
+    [category_id]      INT             NOT NULL,
+    [game_name]        VARCHAR (40)    NOT NULL,
+    [company]          VARCHAR (20)    NOT NULL,
+    [quantity]         INT             NOT NULL,
+    [date_added]       DATE            NOT NULL,
+    [price]            DECIMAL (16, 2) NULL,
+    [game_description] VARCHAR (255)   NOT NULL,
+    PRIMARY KEY CLUSTERED ([game_id] ASC),
+    FOREIGN KEY ([category_id]) REFERENCES [dbo].[Categories] ([category_id])
+);
